@@ -20,7 +20,6 @@ type visitor struct {
 	lastSeen time.Time
 }
 
-// RateLimit returns per-client-IP rate limiting middleware.
 func RateLimit(limit rate.Limit, burst int) gin.HandlerFunc {
 	var (
 		mu       sync.Mutex

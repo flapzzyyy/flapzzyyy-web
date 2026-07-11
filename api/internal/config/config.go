@@ -22,7 +22,6 @@ type Config struct {
 }
 
 func Load() (*Config, error) {
-	// .env is optional; deployment platforms inject real environment variables.
 	_ = godotenv.Load()
 
 	rateLimitRPM, err := strconv.Atoi(getEnv("RATE_LIMIT_RPM", strconv.Itoa(defaultRateLimitRPM)))

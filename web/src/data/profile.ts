@@ -1,11 +1,8 @@
-// About/hero content. Edit freely, everything here is plain display text.
-
 export const profile = {
   greeting: "Hi, my name is",
   headline: "Turning algorithmic logic into impactful systems.",
   intro:
     "Informatics Engineering student at Institut Teknologi Sepuluh Nopember who programs autonomous vessels by day and builds full-stack web apps by night.",
-  /** Portrait shown in the hero. Replace web/public/profile.png with your preferred photo. */
   photo: "/profile.png",
   about: [
     "Hi, I'm Kevin, an Informatics Engineering student at Institut Teknologi Sepuluh Nopember. I like building things where the logic can't be faked: navigation systems that steer real boats, solvers that crack visual puzzles, and the web apps that hold it all together.",
@@ -14,11 +11,11 @@ export const profile = {
   ],
   location: "Surabaya, Indonesia",
   availability: "Open to new opportunities",
-  languages: ["Indonesian (native)", "English (professional)"],
+  languages: ["Indonesian (native)", "English (professional)", "Chinese (beginner)"],
   interests: [
-    "Algorithms & problem-solving",
-    "Robotics & autonomous systems",
-    "Web development",
-    "Teaching & mentoring",
+    "Algorithms & Problem-solving",
+    "Robotics & Autonomous Systems",
+    "Web Development",
+    "Teaching & Mentoring",
   ],
 } as const;

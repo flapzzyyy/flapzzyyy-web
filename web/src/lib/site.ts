@@ -1,5 +1,3 @@
-// Site-wide configuration. Edit this file to update identity, links, and navigation.
-
 export const site = {
   name: "Yoseph Kevin Hendrata",
   shortName: "Kevin",
@@ -11,7 +9,7 @@ export const site = {
   socials: {
     github: "https://github.com/flapzzyyy",
     linkedin: "https://www.linkedin.com/in/yoseph-kevin-hendrata",
-    instagram: "https://www.instagram.com/flapzzyyy",
+    instagram: "https://www.instagram.com/yosephkevinh02",
   },
 } as const;
 

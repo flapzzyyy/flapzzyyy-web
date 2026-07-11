@@ -14,7 +14,6 @@ export function useActiveSection(sectionIds: readonly string[]): string {
           }
         }
       },
-      // Consider a section active while it occupies the middle band of the viewport.
       { rootMargin: "-40% 0px -55% 0px" }
     );
 

@@ -1,5 +1,3 @@
-// Brand icons as inline SVGs (lucide has deprecated brand icons).
-
 type IconProps = {
   className?: string;
 };

@@ -1,5 +1,3 @@
-// Education content - sourced from my resume.
-
 export type Education = {
   institution: string;
   degree: string;

@@ -1,5 +1,3 @@
-// Achievements content - sourced from my resume.
-
 export type Achievement = {
   title: string;
   event: string;

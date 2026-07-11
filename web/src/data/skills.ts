@@ -1,6 +1,3 @@
-// Tech stack content - a flat gallery list. Names must match the icon map in
-// components/sections/tech-stack.tsx; unknown names fall back to a letter tile.
-
 export const techs = [
   "Python",
   "C",

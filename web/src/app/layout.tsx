@@ -94,7 +94,6 @@ export default function RootLayout({
         </Providers>
         <script
           type="application/ld+json"
-          // Static, trusted site config - no user input reaches this JSON.
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
         />
       </body>

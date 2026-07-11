@@ -1,6 +1,3 @@
-// OpenGraph image for link previews (WhatsApp, LinkedIn, Discord, ...).
-// Served at /opengraph-image and referenced automatically by Next.js metadata.
-
 import { ImageResponse } from "next/og";
 
 import { site } from "@/lib/site";
@@ -9,16 +6,11 @@ export const alt = `${site.name}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-// --brand oklch(0.56 0.115 75) from globals.css, brightened for the dark canvas.
 const BRAND = "#c9963e";
 const FOREGROUND = "#fafafa";
 const MUTED = "#a1a1aa";
 const BACKGROUND = "#0a0a0a";
 
-/**
- * Loads a Google Font as TTF data for ImageResponse.
- * Returns null when offline so the image still renders with the default font.
- */
 async function loadGoogleFont(family: string): Promise<ArrayBuffer | null> {
   try {
     const cssUrl = `https://fonts.googleapis.com/css2?family=${family}`;

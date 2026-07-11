@@ -1,7 +1,3 @@
-// Projects content. Every entry follows the same shape:
-// slug, name, tagline, role, year, description, features, tech,
-// gallery (image + screenshots), related (github + demo).
-
 export type Project = {
   slug: string;
   name: string;

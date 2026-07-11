@@ -1,5 +1,3 @@
-// Experience content - sourced from my resume.
-
 export type Experience = {
   company: string;
   position: string;

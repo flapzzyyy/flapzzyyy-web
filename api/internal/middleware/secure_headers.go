@@ -2,7 +2,6 @@ package middleware
 
 import "github.com/gin-gonic/gin"
 
-// SecureHeaders sets baseline security response headers.
 func SecureHeaders() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		header := c.Writer.Header()

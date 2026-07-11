@@ -41,7 +41,6 @@ func New(pool *pgxpool.Pool, allowedOrigins []string, rateLimitRPM int) *gin.Eng
 		})
 	}
 
-	// Platform health probes hit /health; the public API contract lives under /api/v1.
 	r.GET("/health", healthHandler)
 
 	contactRepo := postgres.NewContactRepository(pool)
