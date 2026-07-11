@@ -130,6 +130,7 @@ function ProjectCard({ project }: { project: Project }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const roleAndYear = [project.role, project.year].filter(Boolean).join(" · ");
+  const hasRelatedLinks = Boolean(project.github || project.demo || project.links?.length);
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
@@ -149,7 +150,6 @@ function ProjectCard({ project }: { project: Project }) {
         <ProjectImage project={project} />
 
         <h3 className="text-lg font-semibold tracking-tight">{project.name}</h3>
-        <p className="mt-1 text-sm text-muted-foreground">{project.tagline}</p>
         <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
           {project.description}
         </p>
@@ -200,9 +200,9 @@ function ProjectCard({ project }: { project: Project }) {
             <ScreenshotCarousel project={project} />
           </div>
 
-          <div>
-            <DetailLabel>Related</DetailLabel>
-            {project.github || project.demo ? (
+          {hasRelatedLinks && (
+            <div>
+              <DetailLabel>Related</DetailLabel>
               <div className="flex flex-wrap gap-2">
                 {project.github && (
                   <a
@@ -223,14 +223,24 @@ function ProjectCard({ project }: { project: Project }) {
                     className={buttonVariants({ variant: "outline", size: "sm" })}
                   >
                     <ArrowUpRightIcon className="size-4" />
-                    Live demo
+                    App
                   </a>
                 )}
+                {project.links?.map((link) => (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={buttonVariants({ variant: "outline", size: "sm" })}
+                  >
+                    <ArrowUpRightIcon className="size-4" />
+                    {link.label}
+                  </a>
+                ))}
               </div>
-            ) : (
-              <p className="text-muted-foreground">Links coming soon.</p>
-            )}
-          </div>
+            </div>
+          )}
         </div>
         </div>
       </DialogContent>
