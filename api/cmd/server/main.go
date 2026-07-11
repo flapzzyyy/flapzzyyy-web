@@ -22,7 +22,7 @@ func main() {
 	defer pool.Close()
 	log.Println("connected to database")
 
-	r := router.New(pool, cfg.CORSAllowedOrigins)
+	r := router.New(pool, cfg.CORSAllowedOrigins, cfg.RateLimitRPM)
 	if err := r.Run(":" + cfg.Port); err != nil {
 		log.Fatalf("server exited: %v", err)
 	}

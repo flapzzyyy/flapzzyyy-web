@@ -3,10 +3,13 @@ package config
 import (
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 
 	"github.com/joho/godotenv"
 )
+
+const defaultRateLimitRPM = 5
 
 type Config struct {
 	Port               string
@@ -15,11 +18,17 @@ type Config struct {
 	SupabaseServiceKey string
 	JWTSecret          string
 	CORSAllowedOrigins []string
+	RateLimitRPM       int
 }
 
 func Load() (*Config, error) {
 	// .env is optional; deployment platforms inject real environment variables.
 	_ = godotenv.Load()
+
+	rateLimitRPM, err := strconv.Atoi(getEnv("RATE_LIMIT_RPM", strconv.Itoa(defaultRateLimitRPM)))
+	if err != nil || rateLimitRPM < 1 {
+		return nil, fmt.Errorf("RATE_LIMIT_RPM must be a positive integer")
+	}
 
 	cfg := &Config{
 		Port:               getEnv("PORT", "8080"),
@@ -28,6 +37,7 @@ func Load() (*Config, error) {
 		SupabaseServiceKey: os.Getenv("SUPABASE_SERVICE_ROLE_KEY"),
 		JWTSecret:          os.Getenv("JWT_SECRET"),
 		CORSAllowedOrigins: splitAndTrim(getEnv("CORS_ALLOWED_ORIGINS", "http://localhost:3000")),
+		RateLimitRPM:       rateLimitRPM,
 	}
 
 	var missing []string

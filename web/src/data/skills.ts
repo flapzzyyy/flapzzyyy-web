@@ -1,0 +1,43 @@
+// Tech stack content - a flat gallery list. Names must match the icon map in
+// components/sections/tech-stack.tsx; unknown names fall back to a letter tile.
+
+export const techs = [
+  "Python",
+  "C",
+  "C++",
+  "Swift",
+  "TypeScript",
+  "JavaScript",
+  "Next.js",
+  "React",
+  "TailwindCSS",
+  "HTML",
+  "CSS",
+  "PHP",
+  "Laravel",
+  "Go",
+  "Gin",
+  "Flask",
+  "FastAPI",
+  "Ubuntu",
+  "ROS2",
+  "OpenCV",
+  "YOLO",
+  "TensorFlow",
+  "PyTorch",
+  "Jupyter",
+  "scikit-learn",
+  "MediaPipe",
+  "pandas",
+  "NumPy",
+  "MySQL",
+  "PostgreSQL",
+  "Git",
+  "GitHub",
+  "Docker",
+  "Vercel",
+  "Railway",
+  "Supabase",
+] as const;
+
+export type Tech = (typeof techs)[number];
