@@ -1,7 +1,4 @@
-"use client";
-
 import { ArrowRightIcon, DownloadIcon, MailIcon } from "lucide-react";
-import { motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 
 import { GitHubIcon, InstagramIcon, LinkedInIcon } from "@/components/icons";
@@ -9,8 +6,6 @@ import { buttonVariants } from "@/components/ui/button";
 import { profile } from "@/data/profile";
 import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
-
-const EASE_OUT = [0.21, 0.47, 0.32, 0.98] as const;
 
 function FadeUp({
   children,
@@ -21,17 +16,13 @@ function FadeUp({
   delay: number;
   className?: string;
 }) {
-  const shouldReduceMotion = useReducedMotion();
-
   return (
-    <motion.div
-      className={className}
-      initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay, ease: EASE_OUT }}
+    <div
+      className={cn("animate-hero-fade-up", className)}
+      style={{ animationDelay: `${delay}s` }}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
 

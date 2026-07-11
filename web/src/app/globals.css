@@ -153,6 +153,27 @@
   }
 }
 
+/* Hero entrance animation. CSS (not JS) so the browser can paint the LCP
+   element immediately instead of waiting for hydration. */
+@keyframes hero-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-hero-fade-up {
+  animation: hero-fade-up 0.8s cubic-bezier(0.21, 0.47, 0.32, 0.98) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .animate-hero-fade-up {
+    animation: none;
+  }
+}
+
 /* Subtle dot grid used behind the hero */
 .bg-hero-grid {
   background-image: radial-gradient(
