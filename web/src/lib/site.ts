@@ -3,7 +3,6 @@
 export const site = {
   name: "Yoseph Kevin Hendrata",
   shortName: "Kevin",
-  role: "Software Engineer",
   url: "https://flapzzyyy.vercel.app",
   description:
     "Personal portfolio of Yoseph Kevin Hendrata, an Informatics Engineering student at Institut Teknologi Sepuluh Nopember turning algorithmic logic into impactful systems.",

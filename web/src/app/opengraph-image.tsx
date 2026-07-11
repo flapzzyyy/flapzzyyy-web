@@ -5,7 +5,7 @@ import { ImageResponse } from "next/og";
 
 import { site } from "@/lib/site";
 
-export const alt = `${site.name} - ${site.role}`;
+export const alt = `${site.name}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -101,11 +101,9 @@ export default async function OpenGraphImage() {
           </div>
           <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
             <div style={{ width: 56, height: 3, backgroundColor: BRAND }} />
-            <div style={{ fontSize: 32, color: BRAND }}>{site.role}</div>
           </div>
           <div style={{ fontSize: 24, lineHeight: 1.5, color: MUTED, maxWidth: 860 }}>
-            Informatics Engineering student at Institut Teknologi Sepuluh Nopember turning
-            algorithmic logic into impactful systems.
+            Informatics Engineering student at Institut Teknologi Sepuluh Nopember
           </div>
         </div>
 

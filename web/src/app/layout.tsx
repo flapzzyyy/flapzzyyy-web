@@ -24,7 +24,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} - ${site.role}`,
+    default: `${site.name}`,
     template: `%s - ${site.name}`,
   },
   description: site.description,
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
     type: "website",
     url: site.url,
     siteName: site.name,
-    title: `${site.name} - ${site.role}`,
+    title: `${site.name}`,
     description: site.description,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${site.name} - ${site.role}`,
+    title: `${site.name}`,
     description: site.description,
   },
   robots: { index: true, follow: true },
@@ -61,7 +61,6 @@ const personJsonLd = {
   name: site.name,
   url: site.url,
   email: `mailto:${site.email}`,
-  jobTitle: site.role,
   affiliation: {
     "@type": "CollegeOrUniversity",
     name: "Institut Teknologi Sepuluh Nopember",
